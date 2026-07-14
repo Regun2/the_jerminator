@@ -5,17 +5,9 @@ ENT.Base = "terminator_nextbot_jerminator_realistic"
 DEFINE_BASECLASS( ENT.Base )
 ENT.PrintName = "Jerma986"
 ENT.Spawnable = false
-list.Set( "NPC", "terminator_nextbot_jerminatorwraith", {
-    Name = "Jerma986",
-    Class = "terminator_nextbot_jerminatorwraith",
-    Category = "Terminator Nextbot",
-} )
+terminator_Extras.RegisterNPC( "terminator_nextbot_jerminatorwraith", ENT )
 
-if CLIENT then
-    language.Add( "terminator_nextbot_jerminatorwraith", ENT.PrintName )
-    return
-
-end
+if CLIENT then return end
 
 ENT.SpawnHealth = 200
 ENT.HealthRegen = 10

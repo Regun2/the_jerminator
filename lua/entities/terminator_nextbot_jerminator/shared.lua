@@ -5,17 +5,9 @@ ENT.Base = "terminator_nextbot_jerminator_realistic"
 DEFINE_BASECLASS( ENT.Base )
 ENT.PrintName = "Jerma"
 ENT.Spawnable = false
-list.Set( "NPC", "terminator_nextbot_jerminator", {
-    Name = "Jerma",
-    Class = "terminator_nextbot_jerminator",
-    Category = "Terminator Nextbot",
-} )
+terminator_Extras.RegisterNPC( "terminator_nextbot_jerminator", ENT )
 
-if CLIENT then
-    language.Add( "terminator_nextbot_jerminator", ENT.PrintName )
-    return
-
-end
+if CLIENT then return end
 
 function ENT:EnemyIsLethalInMelee()
     local enemy = self:GetEnemy()
