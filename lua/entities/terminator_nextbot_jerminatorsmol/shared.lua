@@ -5,17 +5,9 @@ ENT.Base = "terminator_nextbot_jerminator_realistic"
 DEFINE_BASECLASS( ENT.Base )
 ENT.PrintName = "Jerma988"
 ENT.Spawnable = false
-list.Set( "NPC", "terminator_nextbot_jerminatorsmol", {
-    Name = "Jerma988",
-    Class = "terminator_nextbot_jerminatorsmol",
-    Category = "Terminator Nextbot",
-} )
+terminator_Extras.RegisterNPC( "terminator_nextbot_jerminatorsmol", ENT )
 
-if CLIENT then
-    language.Add( "terminator_nextbot_jerminatorsmol", ENT.PrintName )
-    return
-
-end
+if CLIENT then return end
 
 function ENT:EnemyIsLethalInMelee()
     local enemy = self:GetEnemy()
@@ -52,7 +44,7 @@ ENT.AccelerationSpeed = 1500
 ENT.JumpHeight = 70 * 2
 ENT.FistDamageMul = 0.3
 ENT.ThrowingForceMul = 1
-ENT.SpawnHealth = 100
+ENT.SpawnHealth = 50
 ENT.MyPhysicsMass = 150
 ENT.HealthRegen = 10
 ENT.HealthRegenInterval = 2

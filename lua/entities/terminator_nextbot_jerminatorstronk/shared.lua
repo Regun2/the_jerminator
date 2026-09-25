@@ -5,17 +5,9 @@ DEFINE_BASECLASS( ENT.Base )
 ENT.Author = "Boomeritaintaters"
 ENT.PrintName = "Jerma990"
 ENT.Spawnable = false
-list.Set( "NPC", "terminator_nextbot_jerminatorstronk", {
-    Name = "Jerma990",
-    Class = "terminator_nextbot_jerminatorstronk",
-    Category = "Terminator Nextbot",
-} )
+terminator_Extras.RegisterNPC( "terminator_nextbot_jerminatorstronk", ENT )
 
-if CLIENT then
-    language.Add( "terminator_nextbot_jerminatorstronk", ENT.PrintName )
-    return
-
-end
+if CLIENT then return end
 
 function ENT:EnemyIsLethalInMelee()
     return false -- no fear

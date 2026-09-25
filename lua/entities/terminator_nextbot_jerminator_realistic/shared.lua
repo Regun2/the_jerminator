@@ -8,11 +8,8 @@ ENT.Base = "terminator_nextbot"
 DEFINE_BASECLASS( ENT.Base )
 ENT.PrintName = "Jerma985"
 ENT.Spawnable = false
-list.Set( "NPC", "terminator_nextbot_jerminator_realistic", {
-    Name = "Jerma985",
-    Class = "terminator_nextbot_jerminator_realistic",
-    Category = "Terminator Nextbot",
-} )
+ENT.SubCategory = "The Jermas"
+terminator_Extras.RegisterNPC( "terminator_nextbot_jerminator_realistic", ENT )
 
 ENT.MySpecialActions = { -- binds 
     ["jerminator_speak"] = {
@@ -29,8 +26,6 @@ ENT.MySpecialActions = { -- binds
 }
 
 if CLIENT then
-    language.Add( "terminator_nextbot_jerminator_realistic", ENT.PrintName )
-
     local contentVar = GetConVar( "jerminator_dynamic_content" )
     local gotBOTContent
     local gotPMContent
@@ -73,7 +68,7 @@ ENT.CanSpeak = true
 ENT.NextTermSpeak = 0
 
 ENT.FistDamageMul = 1.5
-ENT.SpawnHealth = 1500
+ENT.SpawnHealth = 1000
 ENT.HealthRegen = 2
 ENT.HealthRegenInterval = 0.5
 
